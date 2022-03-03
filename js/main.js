@@ -3,11 +3,17 @@ const searchTemperature = async () => {
     const apiKey =`d688b8d4b1e53062089ce9ab2ff36798`;
     const input = document.getElementById('city-name');
     const inputValue = input.value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=metric`;
-    const response = await fetch(url)
-    const data = await response.json()
-    getTemperature (data);
-    input.value = "";
+    if(input.value == ""){
+        input.style.border = '2px solid red';
+    }else{
+        input.style.border = '1px solid green';
+
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=metric`;
+        const response = await fetch(url)
+        const data = await response.json()
+        getTemperature (data);
+        input.value = "";
+    }
 }
 const selectID = (id, text)=>{
     document.getElementById(id).innerText = text;
