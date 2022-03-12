@@ -15,16 +15,22 @@
             background-size: cover;
             height: 100vh;
         }
+        .loader{
+            height: 5px;
+            background: purple;
+            width: 0%;
+        }
     </style>
 </head>
 
 <body>
+    <div class="loader" id="loader"></div>
     <div class="container">
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-3">
-                <input id="city-name" type="text" class="form-control" placeholder="Enter a location for Weather ...">
+                <input id="city-name" type="text" autofocus class="form-control" placeholder="Enter a location for Weather ...">
                 <div class="input-group-append">
-                    <button onclick="searchTemperature()" type="button" class="btn btn-success">Search</button>
+                    <button onclick="searchTemperature()" type="button" id="search_btn" class="btn btn-success">Search</button>
                 </div>
             </div>
         </form>
